@@ -1,0 +1,643 @@
+/* Generelt */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Italiana', serif;
+  font-weight: 400;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #232323;
+}
+
+.wrapper {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background-color: #e5e2dc;
+  padding: 20px 0;
+}
+
+/* Menu Styling */
+.header__nav {
+  max-width: 100%;
+  margin: 0;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.header__menu-item {
+  font-size: 18px;
+}
+
+.header__menu-link {
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+.header__menu-link:hover {
+  color: #b8a694;
+}
+
+/* Forside + bokse */
+.forside__overskrift {
+  font-size: 28px;
+  font-family: 'Italiana', serif;
+  font-weight: 400;
+  line-height: 1.6;
+  align-self: start;
+  margin: 0;
+  color: white;
+}
+
+.forside__tekst {
+  font-size: 16px;
+  font-family: 'Noto Sans' , sans-serif;
+  font-style: italic;
+  color: white;
+  margin: 20px 0;
+  flex-grow: 1;
+}
+
+.forside__knap {
+  display: inline-block;
+  padding: 5px 50px;
+  font-size: 16px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 25px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  width: auto;
+  align-self: center;
+  margin-top: 0;
+}
+
+.forside__knap:hover {
+  color: #A18E7D;
+  border-color: #A18E7D;
+  background-color: transparent;
+}
+
+.forside__bokse {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.forside__boks {
+  flex: 1;
+  height: 350px;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.forside__boks--venstre {
+  background-color: #A18E7D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+  height: 350px;
+}
+
+.forside__boks--hojre {
+  background-color: #c3b8ac;
+  color: #232323;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  height: 350px;
+  align-items: center;
+}
+
+/* Logo i venstre boks */
+.forside__logo {
+  width: 300px;
+  height: auto;
+  max-width: 100%;
+  min-width: 150px;
+  object-fit: contain;
+}
+
+/* Indhold under bokse */
+.forside__indhold--under-bokse {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Billede under venstre boks */
+.forside__billede--under-bokse {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centrerer containeren */
+  align-items: flex-start;
+  padding-right: 20px;
+}
+
+.forside__billede {
+  width: 300px;
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+  align-self: center;
+}
+
+/* Centrerer billedet under venstre boks' midte */
+.forside__billede--under-bokse {
+  position: relative;
+  margin-top: 20px;
+  max-width: 300px;
+  align-self: center;
+}
+
+/* Tekst under højre boks */
+.forside__tekst--box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: auto;
+}
+
+/* Tekst under højre boks */
+.forside__tekst--under-bokse {
+  font-size: 16px;
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 1.8;
+  color: #232323;
+  font-weight: 400;
+  text-align: left;  /* Venstrejusterer teksten i containeren */
+  width: 100%;
+}
+
+.forside__tekst--box {
+  position: relative;
+  margin-top: 20px;
+  max-width: 400px;
+  align-self: center;
+}
+
+/* Afstand mellem billede og footer */
+.forside__indhold--under-bokse {
+  margin-bottom: 40px;
+}
+
+/* Footer */
+.footer {
+  background-color: #c3b8ac;
+  padding: 20px 50px;
+  margin-top: auto;
+  text-align: right;
+}
+
+.footer__overskrift {
+  font-size: 18px;
+  font-family: 'Italiana', serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.footer__tekst__1 {
+  font-size: 14px;
+  font-family: 'Noto Sans' , sans-serif;
+  font-style: italic;
+  color: white;
+}
+
+.footer__tekst__2 {
+  font-size: 14px;
+  font-family: 'Noto Sans' , sans-serif;
+  font-style: italic;
+  color: white;
+}
+
+/* Responsiv Menu */
+@media (max-width: 768px) {
+  .header__menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header__menu-item {
+    font-size: 16px;
+  }
+
+}
+
+/* Responsive bokse */
+@media (max-width: 786px) {
+  .forside__bokse {
+    flex-direction: column; /* Bokse skal være stablet vertikalt */
+  }
+
+  .forside__boks--venstre {
+    order: 1;
+    height: auto;
+  }
+
+  .forside__boks--hojre {
+    order: 2;
+  }
+}
+
+/* Responsiv kontakt Knap */
+@media (max-width: 480px) {
+  .forside__overskrift {
+    font-size: 24px;
+  }
+
+  .forside__tekst {
+    font-size: 16px;
+  }
+
+  .forside__knap {
+    font-size: 14px;
+    padding: 8px 15px;
+    margin-top: 15px;
+    align-self: center;
+  }
+}
+
+/* Responsivt Logo */
+@media (max-width: 480px) {
+  .forside__logo {
+    width: 80%;
+  }
+}
+
+/* Projekter */
+.projekter {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projekter__overskrift {
+  font-family: 'Italiana', serif;
+  font-size: 36px;
+  color: #A18E7D;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projekter__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolonner */
+  gap: 20px; /* Afstand mellem billeder */
+}
+
+.projekter__item {
+  text-align: center;
+}
+
+.projekter__billede {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+}
+
+.projekter__tekst {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #A18E7D;
+  margin-top: 10px;
+}
+
+/* Responsiv tilpasning */
+@media (max-width: 768px) {
+  .projekter__grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolonner */
+  }
+}
+
+@media (max-width: 480px) {
+  .projekter__grid {
+    grid-template-columns: 1fr; /* 1 kolonne */
+  }
+}
+
+
+/* Om Mig */
+.om-mig {
+  display: flex;
+  flex-wrap: wrap; /* Brug wrap for at bryde sektionerne, når skærmen er lille */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Container for hver sektion */
+.om-mig__container {
+  width: 50%; /* Giver plads til både venstre og højre sektion */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Venstre Sektion */
+.om-mig__venstre {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.om-mig__overskrift {
+  font-family: 'Italiana', serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: #232323;
+  margin-bottom: 10px;
+}
+
+.om-mig__subtekst {
+  font-size: 18px;
+  font-style: italic;
+  color: #A18E7D;
+  margin-bottom: 20px;
+}
+
+.om-mig__billede {
+  max-width: 70%;
+  height: auto;
+  border-radius: 0;
+}
+
+/* Højre Sektion */
+.om-mig__hojre {
+  background-color: #A18E7D;
+  color: white;
+  text-align: left;
+  padding-left: 30px; /* Øget padding for bedre justering */
+}
+
+.om-mig__overskrift-hojre {
+  font-family: 'Italiana', serif;
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-left: 0; /* Fjernet margin-left for bedre justering */
+}
+
+.om-mig__tekst {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-top: 20px;
+  padding-right: 20px;
+  padding-left: 30px; /* Øget venstre padding for at matche justeringen */
+  color: white;
+  width: 100%;
+}
+
+.kompetencer__overskrift {
+  font-family: 'Italiana', serif;
+  font-size: 26px;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-left: 0; /* Justeret margin */
+}
+
+.kompetencer__tekst {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-top: 20px;
+  padding-right: 20px;
+  padding-left: 30px; /* Øget venstre padding for at matche justeringen */
+  color: white;
+  width: 100%;
+}
+
+/* Kompetencer Ikoner Container */
+.kompetencer__container {
+  display: flex;
+  justify-content: flex-start; /* Juster containeren til venstre */
+  margin-top: 20px;
+  width: 100%; /* Sikrer, at containeren fylder hele bredden */
+  box-sizing: border-box;
+  padding-left: 30px; /* Justerer venstre padding for at matche tekstjusteringen */
+}
+
+/* Ikon container */
+.kompetencer__ikoner {
+  display: flex;
+  flex-wrap: wrap; /* Gør det muligt for ikonerne at gå til næste linje, hvis der ikke er plads */
+  gap: 10px; /* Lille afstand mellem billederne */
+  justify-content: flex-start; /* Juster ikonerne til venstre */
+  width: 100%; /* Sikrer, at containeren fylder bredden */
+}
+
+/* Ikon styling */
+.kompetencer__ikoner img {
+  max-width: 40px; /* Skalerer ikonerne lidt ned */
+  max-height: 40px;
+  object-fit: contain;
+  display: block;
+  margin: 5px 0; /* Giver lidt afstand mellem ikonerne */
+}
+
+/* Responsiv Om Mig */
+@media (max-width: 768px) {
+  .om-mig__container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .om-mig__overskrift,
+  .om-mig__overskrift-hojre {
+    font-size: 24px;
+  }
+
+  .om-mig__tekst,
+  .kompetencer__tekst {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .kompetencer__overskrift {
+    font-size: 22px;
+  }
+
+  .kompetencer__ikoner img {
+    max-width: 35px;
+    max-height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .om-mig__overskrift,
+  .om-mig__overskrift-hojre {
+    font-size: 20px;
+  }
+
+  .om-mig__tekst,
+  .kompetencer__tekst {
+    font-size: 12px;
+  }
+
+  .kompetencer__ikoner img {
+    max-width: 30px;
+    max-height: 30px;
+  }
+}
+
+.kontakt {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1; /* Sikrer, at kontakt-sektionen fylder pladsen, så footeren kan være nederst */
+}
+
+.kontakt__titel {
+  font-family: 'Italiana', serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: #A18E7D;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.kontakt__beskrivelse {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #A18E7D;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Kontakt Information */
+.kontakt__information {
+  background-color: #A18E7D;
+  padding: 20px 30px;
+  width: 50%; /* Gør boksen mindre */
+  margin: 0 auto; /* Centrerer boksen */
+  text-align: left; /* Venstrejusterer teksten i boksen */
+  border-radius: 0; /* Fjerner de afrundede kanter */
+}
+
+.kontakt__information p {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.8;
+  color: white;
+  margin: 10px 0;
+}
+
+.kontakt__information-email,
+.kontakt__information-telefon {
+  font-style: italic;
+  color: #ffffff;
+}
+
+
+/* Responsiv tilpasning */
+@media (max-width: 768px) {
+  .kontakt__titel {
+    font-size: 28px; /* Skalerer titlen til mindre skærme */
+  }
+
+  .kontakt__beskrivelse {
+    font-size: 16px; /* Skalerer beskrivelsen til mindre skærme */
+  }
+
+  .kontakt__information {
+    width: 80%; /* Gør boksen bredere på mindre skærme */
+    padding: 15px 20px; /* Justerer padding på mindre skærme */
+  }
+}
+
+@media (max-width: 480px) {
+  .kontakt__titel {
+    font-size: 24px; /* Skalerer titlen yderligere */
+  }
+
+  .kontakt__beskrivelse {
+    font-size: 14px; /* Skalerer beskrivelsen yderligere */
+  }
+
+  .kontakt__information p {
+    font-size: 14px; /* Skalerer teksten i boksen */
+  }
+}
+
+/* Billede under kontaktinformation */
+.kontakt__billede--boks {
+  margin-top: 40px; /* Tilføjer afstand mellem boksen og billedet */
+  text-align: center; /* Centrerer billedet */
+}
+
+.kontakt__billede {
+  width: 50%; /* Gør billedet mindre, så det ikke fylder hele bredden */
+  max-width: 400px; /* Sætter en maksimal bredde på billedet */
+  height: auto; /* Bevarer billedets aspect ratio */
+}
+
+/* Responsiv tilpasning */
+@media (max-width: 768px) {
+  .kontakt__billede {
+    width: 70%; /* Skalerer billedet til mindre skærme */
+    max-width: 350px; /* Justerer den maksimale størrelse på billedet */
+  }
+}
+
+@media (max-width: 480px) {
+  .kontakt__billede {
+    width: 80%; /* Gør billedet endnu mindre på de mindste skærme */
+    max-width: 300px; /* Skalerer billedet yderligere */
+  }
+}
+
+/* Underskrift */
+.kontakt__underskrift {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.kontakt__underskrift--billede {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  animation: fadeIn 2s ease-in-out; /* Animationseffekt */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
